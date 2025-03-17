@@ -15,3 +15,36 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+h1 {
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+  font-weight: 600;
+}
+
+h2 {
+  font-size: 1.875rem; 
+  line-height: 2.25rem; 
+  font-weight: 600;
+}
+h3 {
+  font-size: 1.5rem; 
+  line-height: 2rem; 
+  font-weight: 600;
+}
+ul {
+  list-style-type: disc;
+  margin-left: 24px;
+}
+ol {
+  list-style-type: decimal;
+  margin-left: 24px;
+}
+p, h1, h2, h3, ul, ol, a{
+  margin-top: 8px;
+}
+.silkscreen-bold {
+  font-family: "Silkscreen", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}

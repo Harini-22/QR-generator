@@ -4,9 +4,7 @@
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: Manrope,sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -47,4 +45,54 @@ p, h1, h2, h3, ul, ol, a{
   font-family: "Silkscreen", sans-serif;
   font-weight: 500;
   font-style: normal;
+}
+.ql-toolbar.ql-snow {
+  display: flex;
+  justify-content: space-between;
+  background-color: #404040;
+  border: none !important;
+  border-radius: 6px;
+  padding: 16px 10px !important;
+}
+
+.ql-picker-label{
+  color: white !important;
+}
+
+.ql-snow .ql-stroke {
+  stroke: white !important;
+}
+
+.ql-container.ql-snow{
+  height: 20rem;
+  margin-top: 10px;
+  background-color: #404040;
+  border: none !important;
+  border-radius: 6px;
+  padding: 16px 10px !important;
+}
+
+.ql-editor{
+  color: white;
+}
+
+.ql-formats {
+  border-right: 1px solid #eee;
+  padding-right: 2rem;
+  margin-right: 0px !important;
+  button{
+    margin-right: 4px;
+  }
+  .ql-active {
+    border-radius: 6px;
+    background-color: #302f0c !important;
+    .ql-stroke{
+      stroke: #e8e34f !important;
+    }
+  }
+}
+
+.ql-toolbar .ql-formats:last-child {
+  border-right: none;
+  padding-right: 0;
 }

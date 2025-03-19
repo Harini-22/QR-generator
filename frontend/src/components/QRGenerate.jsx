@@ -26,14 +26,18 @@ const QRGenerate = () => {
   };
 
   return (
-    <div className="bg-gray-200 min-h-screen flex flex-col lg:justify-around max-lg:pt-8">
-      <div className="flex flex-col items-center justify-center ">
-        <img src="qr-logo.png" className="w-16 h-16" />
-        <h1 className="silkscreen-bold text-black">QR GENERATOR</h1>
-      </div>
+    <div className="bg-[#404040] min-h-screen flex flex-col lg:justify-around max-lg:pt-8">
       <div className="flex flex-col items-center justify-center max-lg:pt-8">
-        <div className="lg:w-1/2 h-full text-center">
-          {generated ? (
+        {generated ? (
+            <QRCodeComponent
+              qrValue={qrValue}
+              onBack={() => setGenerated(false)}
+            />
+        ) : (
+          <div className="lg:w-1/2 p-4 rounded-md bg-[#2e2e2e] border border-gray-300">
+            <div className="h-full text-center">
+              <ReactQuill ref={quillRef} value={text} onChange={setText} />
+              {/* {generated ? (
             <QRCodeComponent
               qrValue={qrValue}
               onBack={() => setGenerated(false)}
@@ -44,17 +48,26 @@ const QRGenerate = () => {
                 ref={quillRef}
                 value={text}
                 onChange={setText}
-                className="h-60"
               />
             </>
-          )}
-        </div>
-        <button
-          onClick={generateQR}
-          className="mt-14 text-white font-medium px-4 py-2 rounded-lg bg-blue-500"
-        >
-          Generate QR Code
-        </button>
+          )} */}
+            </div>
+            <div className="bg-[#404040] mt-2.5 px-2.5 py-5 rounded-md flex justify-end">
+              <button
+                onClick={() => setText("")}
+                className="text-[#eddb39] px-4 py-2 font-bold mr-10"
+              >
+                Clear
+              </button>
+              <button
+                onClick={generateQR}
+                className="text-[#2b2e2e] font-bold px-4 py-2 rounded-lg bg-[#eddb39]"
+              >
+                Generate QR
+              </button>
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );

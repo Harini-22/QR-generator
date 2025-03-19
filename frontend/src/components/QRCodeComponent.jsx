@@ -10,18 +10,8 @@ const QRCodeComponent = ({ qrValue, onBack }) => {
     if (!canvas) return;
 
     let imageURL;
-    if (format === "svg") {
-      // Convert to SVG (Alternative Method)
-      alert(
-        "SVG download requires a different approach. Try PNG or JPG instead."
-      );
-      return;
-    } else {
-      // Convert canvas to PNG or JPG
       imageURL = canvas.toDataURL(`image/${format}`);
-    }
 
-    // Create a temporary link and trigger the download
     const link = document.createElement("a");
     link.href = imageURL;
     link.download = `qr-code.${format}`;
@@ -67,12 +57,6 @@ const QRCodeComponent = ({ qrValue, onBack }) => {
           className="px-4 py-2 bg-green-500 text-white rounded-lg"
         >
           Download JPG
-        </button>
-        <button
-          onClick={() => downloadQR("svg")}
-          className="px-4 py-2 bg-red-500 text-white rounded-lg"
-        >
-          Download SVG
         </button>
       </div>
     </div>

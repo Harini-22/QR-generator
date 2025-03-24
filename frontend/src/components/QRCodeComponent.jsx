@@ -11,7 +11,6 @@ const QRCodeComponent = ({ qrValue, onBack }) => {
 
     let imageURL;
       imageURL = canvas.toDataURL(`image/${format}`);
-
     const link = document.createElement("a");
     link.href = imageURL;
     link.download = `qr-code.${format}`;

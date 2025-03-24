@@ -3,6 +3,8 @@ import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
 import axios from "axios";
 import QRCodeComponent from "./QRCodeComponent";
+import Header from "./Header";
+import Footer from "./Footer";
 
 const QRGenerate = () => {
   const [text, setText] = useState("");
@@ -26,31 +28,19 @@ const QRGenerate = () => {
   };
 
   return (
-    <div className="bg-[#404040] min-h-screen flex flex-col lg:justify-around max-lg:pt-8">
-      <div className="flex flex-col items-center justify-center max-lg:pt-8">
+    <div className="bg-[#404040] min-h-screen flex flex-col pt-6">
+      <Header />
+      <div className="flex flex-col items-center justify-center max-lg:mx-4 pt-6">
         {generated ? (
-            <QRCodeComponent
-              qrValue={qrValue}
-              onBack={() => setGenerated(false)}
-            />
+          <QRCodeComponent
+            qrValue={qrValue}
+            onBack={() => setGenerated(false)}
+          />
         ) : (
           <div className="lg:w-1/2 p-4 rounded-md bg-[#2e2e2e] border border-gray-300">
             <div className="h-full text-center">
+              {/* Richtext editor  */}
               <ReactQuill ref={quillRef} value={text} onChange={setText} />
-              {/* {generated ? (
-            <QRCodeComponent
-              qrValue={qrValue}
-              onBack={() => setGenerated(false)}
-            />
-          ) : (
-            <>
-              <ReactQuill
-                ref={quillRef}
-                value={text}
-                onChange={setText}
-              />
-            </>
-          )} */}
             </div>
             <div className="bg-[#404040] mt-2.5 px-2.5 py-5 rounded-md flex justify-end">
               <button
@@ -69,6 +59,7 @@ const QRGenerate = () => {
           </div>
         )}
       </div>
+      <Footer />
     </div>
   );
 };
